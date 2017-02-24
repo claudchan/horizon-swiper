@@ -35,6 +35,7 @@
     showItems: 'auto',
     dots: false,
     numberedDots: false,
+    dotsContainer: '',
     arrows: true,
     arrowPrevText: '',
     arrowNextText: '',
@@ -235,7 +236,12 @@
           that.$dots.append($newDot);
         }
 
-        that.$element.append(that.$dots);
+        if (that.settings.dotsContainer instanceof jQuery) {
+          that.settings.dotsContainer.append(that.$dots);
+        }
+        else {
+          that.$element.append(that.$dots);
+        }
 
         that.$dots.find('button').on('click', function (e) {
           e.preventDefault();
