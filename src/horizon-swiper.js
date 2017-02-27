@@ -229,8 +229,8 @@
       if (that.settings.dots) {
         that.$dots = $(defaults.dotContainer);
 
-        for (var i = 1; i < that.$items.length; ++i) {
-          var dotName = that.settings.numberedDots ? i : '';
+        for (var i = 0; i < that.$items.length; ++i) {
+          var dotName = that.settings.numberedDots ? i+1 : '';
           var $newDot = $('<button class="horizon-dot" data-horizon-target="' + i + '">' + dotName + '</button>');
           that.$dots.append($newDot);
         }
