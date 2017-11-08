@@ -231,15 +231,14 @@
         that.$dots = $(defaults.dotContainer);
 
         for (var i = 0; i < that.$items.length; ++i) {
-          var dotName = that.settings.numberedDots ? i+1 : '';
+          var dotName = that.settings.numberedDots ? i + 1 : '';
           var $newDot = $('<button class="horizon-dot" data-horizon-target="' + i + '">' + dotName + '</button>');
           that.$dots.append($newDot);
         }
 
         if (that.settings.dotsContainer instanceof jQuery) {
           that.settings.dotsContainer.append(that.$dots);
-        }
-        else {
+        } else {
           that.$element.append(that.$dots);
         }
 
