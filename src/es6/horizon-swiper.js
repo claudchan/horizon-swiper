@@ -35,6 +35,7 @@
     showItems: 'auto',
     dots: false,
     numberedDots: false,
+    dotsContainer: '',
     arrows: true,
     arrowPrevText: '',
     arrowNextText: '',
@@ -237,12 +238,17 @@
         that.$dots = $( defaults.dotContainer );
 
         for (var i = 0; i < that.$items.length; ++i) {
-          var dotName = ( that.settings.numberedDots ) ? i : '';
+          var dotName = ( that.settings.numberedDots ) ? i+1 : '';
           var $newDot = $( '<button class="horizon-dot" data-horizon-target="' + i + '">' + dotName + '</button>' );
           that.$dots.append( $newDot );
         }
 
-        that.$element.append( that.$dots );
+        if (that.settings.dotsContainer instanceof jQuery) {
+          that.settings.dotsContainer.append(that.$dots);
+        }
+        else {
+          that.$element.append(that.$dots);
+        }
 
         that.$dots.find( 'button' ).on( 'click', function ( e ) {
           e.preventDefault();
