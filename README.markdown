@@ -22,6 +22,21 @@ Try it on touch devices!
 $('.horizon-swiper').horizonSwiper();
 ```
 
+### Options
+
+Variable | Type | Default | Description
+------ | ---- | ------- | -----------
+item | string | '.horizon-item' | Selector for the swiper items.
+showItems | string or integer | 'auto' | Set 'auto' for the original item width or an integer for a numer of items. For example, set 2 for a 50% item width.
+dots | boolean | false | Enable or disable the slide dots (pagination).
+numberedDots | boolean | false | Enable or disable numbers for the slide dots.
+dotsContainer | string | $(element) | Change where the navigation dots are attached (Selector, htmlString, Array, Element, jQuery object)
+arrows | boolean | true | Enable or disable the slide to next or previous item arrows.
+arrowPrevText | string | '' | Text for the slide to previous button.
+arrowNextText | string | '' | Text for the slide to next button.
+animationSpeed | integer | 500 | Time to slide to the next item.
+mouseDrag | boolean | true | Enable or disable the mousedrag (includes no touch).
+
 ### Browser support
 * Google Chrome
 * Mozilla FireFox
